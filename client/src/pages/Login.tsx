@@ -24,7 +24,7 @@ const Login = () => {
       console.error('Username and password are required');
       return;
     }
-    
+
     try {
       const data = await login(loginData);
       Auth.login(data.token);

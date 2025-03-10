@@ -19,6 +19,12 @@ const Login = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+
+    if (!loginData.username || !loginData.password) {
+      console.error('Username and password are required');
+      return;
+    }
+    
     try {
       const data = await login(loginData);
       Auth.login(data.token);
